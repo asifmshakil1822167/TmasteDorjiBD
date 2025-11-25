@@ -1,2 +1,3 @@
 # TmasteDorjiBD
-Bd Tailor Mangement Appliciatopn System
+Bd Tailor Management Application System
+https://tmasterdorjibd.netlify.app/

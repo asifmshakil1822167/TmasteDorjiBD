@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TmasteDorjiBD – Tailoring Management</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<style>
+
+/* ==== BANGLADESH FINTECH THEME (Nagad Inspired) ===== */
+body {
+    background: linear-gradient(135deg,#ff5a36,#ff7e4f,#ff9a62);
+    min-height:100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+    padding: 30px;
+}
+
+/* Card Style */
+.card-ui {
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+.card-ui:hover {
+    transform:scale(1.03);
+}
+
+/* Button */
+.btn-main {
+    background:#d62828;
+    color:white;
+    padding:12px 18px;
+    border-radius:8px;
+    font-weight:600;
+}
+.btn-main:hover {
+    background:#a01d1d;
+}
+
+/* Hidden views */
+.view {
+    display:none;
+    animation:fadeIn 0.4s;
+}
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+/* Success check */
+.big-check {
+    font-size:100px;
+    color:#1e7b34;
+}
+
+/* Top Navigation */
+.topnav {
+    background:#d62828;
+    padding:12px;
+    color:white;
+    font-size:22px;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="topnav">TmasteDorjiBD</div>
+<div class="container app-container">
+
+<!-- ================= LANDING ================= -->
+<div id="view-home" class="view" style="display:block;">
+    <div class="text-center text-white mb-4">
+        <h1>Digital Tailoring in Bangladesh 🇧🇩</h1>
+        <p>Fast • Trusted • Doorstep Stitching</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-ui text-center" onclick="goTo('view-category')">
+                <h2>👕 Male</h2>
+                <p>Shirt, Pant, Punjabi...</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-ui text-center" onclick="goTo('view-category')">
+                <h2>👗 Female</h2>
+                <p>Salwar, Blouse, Kameez...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-light" onclick="goTo('view-login')">Login</button>
+    </div>
+</div>
+
+
+<!-- ================= LOGIN ================= -->
+<div id="view-login" class="view">
+    <div class="card-ui">
+        <h3 class="text-center mb-3">Login</h3>
+        <input class="form-control mb-3" placeholder="Phone / Email">
+        <input class="form-control mb-3" type="password" placeholder="Password">
+        <button class="btn btn-main w-100" onclick="goTo('view-dashboard')">Login</button>
+    </div>
+</div>
+
+
+<!-- ================= DASHBOARD ================= -->
+<div id="view-dashboard" class="view">
+    <h2 class="text-white text-center mb-3">Dashboard</h2>
+
+    <div class="card-ui">
+        <h4>Welcome Back!</h4>
+        <p>Your stitching activity summary:</p>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-ui">
+                    <h5>📦 Orders</h5>
+                    <p>32 Active</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-ui">
+                    <h5>🪡 Pending</h5>
+                    <p>12 Items</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-ui">
+                    <h5>💰 Earnings</h5>
+                    <p>৳ 28,900 (This Month)</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-main mt-3" onclick="goTo('view-home')">Start New Order</button>
+    </div>
+</div>
+
+
+<!-- ================= CATEGORY ================= -->
+<div id="view-category" class="view">
+    <h2 class="text-white text-center mb-3">Select Garment</h2>
+
+    <div class="row">
+        <div class="col-md-3"><div class="card-ui text-center" onclick="choose('Shirt')">Shirt</div></div>
+        <div class="col-md-3"><div class="card-ui text-center" onclick="choose('Pant')">Pant</div></div>
+        <div class="col-md-3"><div class="card-ui text-center" onclick="choose('Suit')">Suit</div></div>
+        <div class="col-md-3"><div class="card-ui text-center" onclick="choose('Salwar')">Salwar</div></div>
+    </div>
+</div>
+
+
+<!-- ================= MEASUREMENT ================= -->
+<div id="view-measure" class="view">
+    <h2 class="text-white text-center mb-3">Measurements</h2>
+
+    <div class="card-ui">
+        <h5>Select Measurement Method</h5>
+
+        <label><input type="radio" name="m" checked> Standard Size</label><br>
+        <label><input type="radio" name="m"> Custom Size</label><br>
+        <label><input type="radio" name="m"> Saved Measurements</label><br>
+
+        <button class="btn btn-main mt-3 w-100" onclick="goTo('view-review')">
+            Continue
+        </button>
+    </div>
+</div>
+
+
+<!-- ================= REVIEW ================= -->
+<div id="view-review" class="view">
+    <h2 class="text-white text-center mb-3">Review Your Order</h2>
+
+    <div class="card-ui">
+        <h5>Garment: <span id="reviewGarment"></span></h5>
+        <p>Size: M</p>
+        <p>Fabric: Default</p>
+
+        <button class="btn btn-main w-100" onclick="goTo('view-payment')">Proceed to Payment</button>
+    </div>
+</div>
+
+
+<!-- ================= PAYMENT ================= -->
+<div id="view-payment" class="view">
+    <h2 class="text-white text-center mb-3">Payment Method</h2>
+
+    <div class="card-ui">
+        <label><input type="radio" name="pay"> bKash</label><br>
+        <label><input type="radio" name="pay"> Nagad</label><br>
+        <label><input type="radio" name="pay"> Rocket</label><br>
+        <label><input type="radio" name="pay"> Cash on Delivery</label><br>
+
+        <button class="btn btn-main w-100 mt-3" onclick="goTo('view-success')">Place Order</button>
+    </div>
+</div>
+
+
+<!-- ================= SUCCESS ================= -->
+<div id="view-success" class="view text-center">
+    <div class="big-check">✔️</div>
+    <h2 class="text-white">Order Successful!</h2>
+    <p class="text-light">Your Dorji will contact you shortly.</p>
+
+    <button class="btn btn-light mt-3" onclick="goTo('view-dashboard')">Go to Dashboard</button>
+</div>
+
+</div> <!-- /container -->
+
+
+<script>
+// === Universal Scene Switcher ===
+function goTo(viewID) {
+    document.querySelectorAll(".view").forEach(v => v.style.display = "none");
+    document.getElementById(viewID).style.display = "block";
+    window.scrollTo(0,0);
+}
+
+// === Save selected garment ===
+function choose(type){
+    localStorage.setItem("garment", type);
+    document.getElementById("reviewGarment").innerHTML = type;
+    goTo("view-measure");
+}
+
+</script>
+
+</body>
+</html>
